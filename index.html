@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lakshya Vashistha - Web Developer & Tech Enthusiast from Rajasthan, India. Passionate about transforming ideas into digital experiences with modern web technologies.">
+    <meta name="keywords" content="Lakshya Vashistha, web developer, tech enthusiast, portfolio, websites, android apps, BCA student, Rajasthan">
+    <meta name="author" content="Lakshya Vashistha">
+    <title>Lakshya Vashistha - Web Developer & Tech Enthusiast</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-text">
+                <span class="letter">P</span>
+                <span class="letter">O</span>
+                <span class="letter">R</span>
+                <span class="letter">T</span>
+                <span class="letter">F</span>
+                <span class="letter">O</span>
+                <span class="letter">L</span>
+                <span class="letter">I</span>
+                <span class="letter">O</span>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-section="home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-section="about">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#resume" class="nav-link" data-section="resume">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resume</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link" data-section="experience">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Experience</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-section="projects">
+                        <i class="fas fa-code"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="container">
+                <div class="home-content">
+                    <div class="intro-text">
+                        <h1 class="name-reveal">
+                            <span class="greeting">Hello, I'm</span>
+                            <span class="name">
+                                <span class="letter">L</span>
+                                <span class="letter">a</span>
+                                <span class="letter">k</span>
+                                <span class="letter">s</span>
+                                <span class="letter">h</span>
+                                <span class="letter">y</span>
+                                <span class="letter">a</span>
+                                <span class="space"> </span>
+                                <span class="letter">V</span>
+                                <span class="letter">a</span>
+                                <span class="letter">s</span>
+                                <span class="letter">h</span>
+                                <span class="letter">i</span>
+                                <span class="letter">s</span>
+                                <span class="letter">h</span>
+                                <span class="letter">t</span>
+                                <span class="letter">h</span>
+                                <span class="letter">a</span>
+                            </span>
+                        </h1>
+                        <div class="typewriter-container">
+                            <p class="typewriter" id="typewriter"></p>
+                            <span class="cursor-blink">|</span>
+                        </div>
+                        <p class="intro-description" data-aos="fade-up" data-aos-delay="1000">
+                            Tech enthusiast and web developer passionate about transforming ideas into digital experiences. 
+                            I believe in learning by building - every project brings me closer to mastering technology and creativity combined.
+                        </p>
+                    </div>
+                    
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="1200">
+                        <button class="btn btn-primary" id="view-resume">
+                            <span>View Resume</span>
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn btn-secondary" id="explore-projects">
+                            <span>Explore Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-outline" id="contact-me">
+                            <span>Contact Me</span>
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="avatar-container" data-aos="fade-left" data-aos-delay="800">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-bg"></div>
+                        <img src="assets/images/my.jpg" alt="Lakshya Vashistha Profile" class="avatar-img">
+                        <div class="avatar-glow"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="floating-elements">
+                <div class="floating-icon" data-icon="html">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="floating-icon" data-icon="css">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="floating-icon" data-icon="js">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <div class="floating-icon" data-icon="react">
+                    <i class="fab fa-react"></i>
+                </div>
+                <div class="floating-icon" data-icon="node">
+                    <i class="fab fa-node-js"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    <span class="title-number">01.</span>
+                    About Me
+                </h2>
+                
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <p class="about-description">
+                            I'm a passionate full-stack developer with a love for creating 
+                            exceptional digital experiences. With expertise in modern web technologies, 
+                            I specialize in building responsive, user-friendly applications that 
+                            combine beautiful design with robust functionality.
+                        </p>
+                        
+                        <div class="interests-grid">
+                            <div class="interest-card">
+                                <i class="fas fa-laptop-code"></i>
+                                <h4>Web Development</h4>
+                                <p>Creating responsive and interactive web applications</p>
+                            </div>
+                            <div class="interest-card">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Mobile Apps</h4>
+                                <p>Building cross-platform mobile solutions</p>
+                            </div>
+                            <div class="interest-card">
+                                <i class="fas fa-brain"></i>
+                                <h4>AI & Machine Learning</h4>
+                                <p>Exploring intelligent solutions and automation</p>
+                            </div>
+                            <div class="interest-card">
+                                <i class="fas fa-palette"></i>
+                                <h4>UI/UX Design</h4>
+                                <p>Crafting beautiful and intuitive user interfaces</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-photo" data-aos="fade-left">
+                        <div class="photo-container">
+                            <img src="assets/images/my.jpg" alt="Lakshya Vashistha">
+                            <div class="photo-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Timeline -->
+                <div class="education-timeline" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="timeline-title">🎓 Education & Milestones</h3>
+                    <div class="timeline-container">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Bachelor of Computer Applications (BCA)</h4>
+                                <p class="timeline-date">2025 - Present (1st Year)</p>
+                                <p>Currently studying at Poddar International College</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>12th Pass - Science (Maths)</h4>
+                                <p class="timeline-date">2023</p>
+                                <p>Completed from Alpha Beta School with Science stream</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Self-Taught Web Development</h4>
+                                <p class="timeline-date">2022 - Present</p>
+                                <p>Continuously learning and building projects in web development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section resume-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    <span class="title-number">02.</span>
+                    Resume & Skills
+                </h2>
+                
+                <div class="resume-content">
+                    <div class="skills-section" data-aos="fade-up">
+                        <h3>Technical Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4><i class="fas fa-code"></i> Frontend</h4>
+                                <div class="skill-item">
+                                    <span class="skill-name">HTML/CSS</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="95"></div>
+                                    </div>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="90"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">React</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Vue.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-server"></i> Backend</h4>
+                                <div class="skill-item">
+                                    <span class="skill-name">Node.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="88"></div>
+                                    </div>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Python</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">MongoDB</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="82"></div>
+                                    </div>
+                                    <span class="skill-percentage">82%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">PostgreSQL</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="78"></div>
+                                    </div>
+                                    <span class="skill-percentage">78%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4><i class="fas fa-tools"></i> Tools & Others</h4>
+                                <div class="skill-item">
+                                    <span class="skill-name">Git/GitHub</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="92"></div>
+                                    </div>
+                                    <span class="skill-percentage">92%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Docker</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="75"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">AWS</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="70"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Figma</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-download" data-aos="fade-up" data-aos-delay="200">
+                        <button class="btn btn-download" id="download-resume">
+                            <span>Download Resume</span>
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="download-glow"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    <span class="title-number">03.</span>
+                    💼 Work Experience
+                </h2>
+                
+                <div class="experience-timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="experience-dot"></div>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>💻 Computer Operator</h3>
+                                <p class="company">Rajasthan University of Health Sciences (RUHS)</p>
+                                <p class="duration">6 Months Experience</p>
+                            </div>
+                            <div class="experience-content">
+                                <ul>
+                                    <li>Worked in work management and account section as a Computer Operator</li>
+                                    <li>Handled data entries, digital documentation, and account management systems efficiently</li>
+                                    <li>Managed financial records and administrative documentation</li>
+                                    <li>Ensured accuracy in data processing and system maintenance</li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">MS Office</span>
+                                    <span class="tech-tag">Data Management</span>
+                                    <span class="tech-tag">Digital Documentation</span>
+                                    <span class="tech-tag">Account Systems</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="experience-dot"></div>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>🧠 Survey Data Analyst</h3>
+                                <p class="company">QDegrees Company</p>
+                                <p class="duration">3 Months Experience</p>
+                            </div>
+                            <div class="experience-content">
+                                <ul>
+                                    <li>Conducted surveys and data analysis for the Bank BM Survey Project</li>
+                                    <li>Worked on maintaining accurate reports and digital records</li>
+                                    <li>Gained corporate experience in communication, data handling, and workflow organization</li>
+                                    <li>Improved data collection processes and report generation efficiency</li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Data Analysis</span>
+                                    <span class="tech-tag">Survey Management</span>
+                                    <span class="tech-tag">Report Generation</span>
+                                    <span class="tech-tag">Communication</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="experience-dot"></div>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <h3>💻 Freelance Web Developer</h3>
+                                <p class="company">Self-Employed</p>
+                                <p class="duration">2022 - Present</p>
+                            </div>
+                            <div class="experience-content">
+                                <ul>
+                                    <li>Developed various websites including cafes, portfolios, and e-commerce platforms</li>
+                                    <li>Created interactive gaming websites and birthday wishing pages</li>
+                                    <li>Built Android applications with real-time notifications</li>
+                                    <li>Worked on QR code generation tools and business websites</li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">Android Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    <span class="title-number">04.</span>
+                    Featured Projects
+                </h2>
+                
+                <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="ai">AI/ML</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=E-Commerce+Platform" alt="E-Commerce Platform">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="1">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Stripe</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Task+Management+App" alt="Task Management App">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Task Management App</h3>
+                            <p>Collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Socket.io</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Weather+App" alt="Weather App">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="3">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Weather Forecast App</h3>
+                            <p>Beautiful weather application with location-based forecasts, interactive maps, and personalized weather alerts.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Weather API</span>
+                                <span class="tech-tag">Maps API</span>
+                                <span class="tech-tag">Redux</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="ai" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=AI+Chatbot" alt="AI Chatbot">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="4">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI-Powered Chatbot</h3>
+                            <p>Intelligent chatbot with natural language processing, sentiment analysis, and integration with multiple platforms.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="600">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Social+Media+Dashboard" alt="Social Media Dashboard">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="5">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Social Media Dashboard</h3>
+                            <p>Analytics dashboard for social media management with real-time metrics, scheduled posting, and engagement tracking.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Social APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="700">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Fitness+Tracker" alt="Fitness Tracker">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="6">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Fitness Tracker App</h3>
+                            <p>Comprehensive fitness tracking application with workout plans, progress monitoring, and social challenges.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Health APIs</span>
+                                <span class="tech-tag">Charts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-header">
+                <h3 id="modal-title">Project Title</h3>
+                <div class="modal-links">
+                    <a href="#" class="modal-link" id="modal-github">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="#" class="modal-link" id="modal-demo">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Project Image">
+                </div>
+                <div class="modal-description">
+                    <p id="modal-desc">Project description will appear here...</p>
+                    <div class="modal-features">
+                        <h4>Key Features:</h4>
+                        <ul id="modal-features-list">
+                            <!-- Features will be dynamically added -->
+                        </ul>
+                    </div>
+                    <div class="modal-tech">
+                        <h4>Technologies Used:</h4>
+                        <div id="modal-tech-tags">
+                            <!-- Tech tags will be dynamically added -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
