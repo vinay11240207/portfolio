@@ -97,6 +97,7 @@ class PortfolioApp {
     initNavigation() {
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
+        const navBackdrop = document.getElementById('nav-backdrop');
         const navLinks = document.querySelectorAll('.nav-link');
 
         // Mobile menu toggle
@@ -104,15 +105,19 @@ class PortfolioApp {
             this.isMenuOpen = !this.isMenuOpen;
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            navBackdrop.classList.toggle('active');
+        });
+
+        // Close menu when clicking on backdrop
+        navBackdrop.addEventListener('click', () => {
+            this.closeMenu();
         });
 
         // Close menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (this.isMenuOpen) {
-                    this.isMenuOpen = false;
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
+                    this.closeMenu();
                 }
                 
                 // Update active link
@@ -123,6 +128,13 @@ class PortfolioApp {
 
         // Update active nav link on scroll
         this.updateActiveNavLink();
+    }
+
+    closeMenu() {
+        this.isMenuOpen = false;
+        document.getElementById('hamburger').classList.remove('active');
+        document.getElementById('nav-menu').classList.remove('active');
+        document.getElementById('nav-backdrop').classList.remove('active');
     }
 
     initBackToTop() {
@@ -294,9 +306,12 @@ class PortfolioApp {
     }
 
     handleKeyboard(e) {
-        // Escape key to close modal
+        // Escape key to close modal or mobile menu
         if (e.key === 'Escape') {
             this.closeProjectModal();
+            if (this.isMenuOpen) {
+                this.closeMenu();
+            }
         }
         
         // Arrow keys for navigation

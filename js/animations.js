@@ -8,6 +8,9 @@ class AnimationController {
         // Initialize GSAP
         gsap.registerPlugin(ScrollTrigger);
         
+        // Ensure name visibility fallback
+        this.ensureNameVisibility();
+        
         // Initialize AOS
         AOS.init({
             duration: 800,
@@ -24,6 +27,23 @@ class AnimationController {
         this.setupFloatingElements();
         this.setupParallaxEffects();
         this.setupHoverAnimations();
+    }
+
+    ensureNameVisibility() {
+        // Fallback to ensure name is always visible
+        setTimeout(() => {
+            const nameLetters = document.querySelectorAll('.name .letter');
+            const nameElement = document.querySelector('.name');
+            
+            if (nameElement) {
+                nameElement.style.opacity = '1';
+            }
+            
+            nameLetters.forEach(letter => {
+                letter.style.opacity = '1';
+                letter.style.transform = 'translateY(0)';
+            });
+        }, 100);
     }
 
     setupLoaderAnimation() {
@@ -79,6 +99,10 @@ class AnimationController {
 
         // Animate name reveal letters
         const nameLetters = document.querySelectorAll('.name .letter');
+        
+        // Ensure name is visible as fallback
+        nameLetters.forEach(letter => letter.style.opacity = '1');
+        
         gsap.fromTo(nameLetters,
             { opacity: 0, y: 30, rotationX: 90 },
             { 
@@ -88,7 +112,11 @@ class AnimationController {
                 duration: 0.6,
                 stagger: 0.1,
                 delay: 0.5,
-                ease: "back.out(1.7)"
+                ease: "back.out(1.7)",
+                onComplete: () => {
+                    // Ensure visibility after animation
+                    nameLetters.forEach(letter => letter.style.opacity = '1');
+                }
             }
         );
 

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Lakshya Vashistha - Web Developer & Tech Enthusiast. Explore my portfolio of web applications, mobile apps, and creative projects.">
+    <meta name="keywords" content="Lakshya Vashistha, projects, portfolio, web development, mobile apps, programming">
+    <meta name="author" content="Lakshya Vashistha">
+    <title>Projects - Lakshya Vashistha | Web Developer Portfolio</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><span class="logo-text">Portfolio</span></a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#resume" class="nav-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resume</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#experience" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Experience</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link active">
+                        <i class="fas fa-code"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Backdrop -->
+    <div class="nav-backdrop" id="nav-backdrop"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Projects Header -->
+        <section class="projects-header-section">
+            <div class="container">
+                <div class="projects-header" data-aos="fade-up">
+                    <h1 class="page-title">
+                        <span class="title-number">My</span>
+                        Projects Portfolio
+                    </h1>
+                    <p class="page-description">
+                        Explore my collection of web applications, mobile apps, and creative projects. 
+                        Each project represents a journey of learning, problem-solving, and innovation.
+                    </p>
+                    <div class="header-actions">
+                        <a href="https://github.com/vinay11240207" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-github"></i>
+                            <span>View GitHub</span>
+                        </a>
+                        <a href="index.html#home" class="btn btn-secondary">
+                            <i class="fas fa-home"></i>
+                            <span>Back to Home</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section projects-showcase">
+            <div class="container">
+                <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Applications</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                    <button class="filter-btn" data-filter="creative">Creative Projects</button>
+                    <button class="filter-btn" data-filter="tools">Tools & Utilities</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- E-Commerce Platform -->
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=E-Commerce+Platform" alt="E-Commerce Platform">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="1">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://github.com/vinay11240207" target="_blank" class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Task Management App -->
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Task+Management" alt="Task Management App">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="2">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://github.com/vinay11240207" target="_blank" class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Task Management App</h3>
+                            <p>Collaborative task management platform with real-time updates, team collaboration, and project tracking.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">WebSockets</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weather App -->
+                    <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Weather+App" alt="Weather App">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="3">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://github.com/vinay11240207" target="_blank" class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Weather Forecast App</h3>
+                            <p>Beautiful weather application with location-based forecasts, interactive maps, and real-time notifications.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Android</span>
+                                <span class="tech-tag">API Integration</span>
+                                <span class="tech-tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Website -->
+                    <div class="project-card" data-category="web creative" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Portfolio+Website" alt="Portfolio Website">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="4">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://github.com/vinay11240207" target="_blank" class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Interactive Portfolio</h3>
+                            <p>Modern, responsive portfolio website with smooth animations, particle effects, and dynamic content.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">GSAP</span>
+                                <span class="tech-tag">Canvas</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- QR Code Generator -->
+                    <div class="project-card" data-category="tools web" data-aos="fade-up" data-aos-delay="600">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=QR+Generator" alt="QR Code Generator">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="5">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://github.com/vinay11240207" target="_blank" class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>QR Code Generator</h3>
+                            <p>Advanced QR code generation tool with customization options, bulk generation, and analytics tracking.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Canvas API</span>
+                                <span class="tech-tag">SVG</span>
+                                <span class="tech-tag">PDF Export</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Birthday Wishes App -->
+                    <div class="project-card" data-category="creative mobile" data-aos="fade-up" data-aos-delay="700">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/1a1a2e/00d4ff?text=Birthday+App" alt="Birthday Wishes App">
+                            <div class="project-overlay">
+                                <button class="project-btn view-project" data-project="6">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <a href="https://github.com/vinay11240207" target="_blank" class="project-btn view-code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-btn live-demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Birthday Wishes App</h3>
+                            <p>Interactive birthday celebration app with animations, music, personalized messages, and social sharing.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Android</span>
+                                <span class="tech-tag">Animations</span>
+                                <span class="tech-tag">Audio API</span>
+                                <span class="tech-tag">Social Share</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Profile Link -->
+                <div class="github-section" data-aos="fade-up" data-aos-delay="800">
+                    <h3>Want to see more?</h3>
+                    <p>Check out my GitHub profile for more projects, contributions, and code samples.</p>
+                    <a href="https://github.com/vinay11240207" target="_blank" class="btn btn-github">
+                        <i class="fab fa-github"></i>
+                        <span>Visit My GitHub</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Modal (reuse from index.html if needed) -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 id="modal-title">Project Title</h3>
+                <div class="modal-actions">
+                    <a href="https://github.com/vinay11240207" target="_blank" class="modal-link" id="modal-github">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="#" class="modal-link" id="modal-demo">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Project details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            new PortfolioApp();
+            new AnimationController();
+            new ParticleSystem();
+            
+            // Initialize AOS for page-specific animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html>
